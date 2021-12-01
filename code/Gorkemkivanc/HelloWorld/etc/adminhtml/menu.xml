@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Gorkemkivanc_HelloWorld::helloworld" title="Gorkem" module="Gorkemkivanc_HelloWorld" sortOrder="51" resource="Gorkemkivanc_HelloWorld::helloworld"/>
+        <add id="Gorkemkivanc_HelloWorld::post" title="Manage Posts" module="Gorkemkivanc_HelloWorld" sortOrder="10" action="Gorkemkivanc_helloworld/post" resource="Gorkemkivanc_HelloWorld::post" parent="Gorkemkivanc_HelloWorld::helloworld"/>
+        
+    </menu>
+</config>
