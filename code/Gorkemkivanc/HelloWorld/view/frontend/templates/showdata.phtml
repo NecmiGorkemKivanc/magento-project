@@ -24,7 +24,7 @@ if ($collection->count()) {
                 <?php echo $item->getTitle() ?>
             </td>
             <td data-th="<?= $block->escapeHtml(__('Content')) ?>" class="col content">
-                <?php echo $item->getEmail() ?>
+                <?php echo $item->getContent() ?>
             </td>
             <td data-th="<?= $block->escapeHtml(__('Created At')) ?>"
                 class="col create_at"><?php echo date('Y-m-d', strtotime($item->getCreateAt())); ?></td>
