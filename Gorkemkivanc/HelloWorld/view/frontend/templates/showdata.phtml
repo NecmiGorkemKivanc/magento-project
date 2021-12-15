@@ -1,0 +1,42 @@
+<?php
+ $collection = $block->getCollection();
+if ($collection->count()) {
+?>
+<div class="table-wrapper orders-history">
+    <table class="data table table-order-items history" id="my-orders-table">
+        <caption class="table-caption"><?php echo __('Grid Record') ?></caption>
+        <thead>
+        <tr>
+            <th scope="col" class="col post id"><?php echo __('post id') ?></th>
+            <th scope="col" class="col title"><?php echo __('Title') ?></th>
+            <th scope="col" class="col content"><?php echo __('Content') ?></th>
+            <th scope="col" class="col Url Key"><?php echo __('Url Key') ?></th>
+            <th scope="col" class="col createat"><?php echo __('Created At') ?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+ foreach ($collection as $item): ?>
+        <tr>
+            <td data-th="<?= $block->escapeHtml(__('post_id_column')) ?>" class="col post_id_column">
+                <?php echo $item->getPostIdColumn() ?>
+            </td>
+            <td data-th="<?= $block->escapeHtml(__('Title')) ?>" class="col title">
+                <?php echo $item->getTitle() ?>
+            </td>
+            <td data-th="<?= $block->escapeHtml(__('Content')) ?>" class="col content">
+                <?php echo $item->getContent() ?>
+            </td>
+            <td data-th="<?= $block->escapeHtml(__('url_key')) ?>"
+                class="col url_key"><?php echo $item->getUrlKey(); ?></td>
+            <td data-th="<?= $block->escapeHtml(__('Created At')) ?>"
+                class="col create_at"><?php echo date('Y-m-d', strtotime($item->getCreateAt())); ?></td>
+
+        </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+<?php
+ }
+ ?>
